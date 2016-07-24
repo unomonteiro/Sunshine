@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+def OPEN_WEATHER_MAP_API_KEY = '"' + OpenWeatherMapApiKey + '"' ?: '"Define OpenWeatherMapApiKey"';
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -12,6 +14,9 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        all {
+            buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY', OPEN_WEATHER_MAP_API_KEY
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
