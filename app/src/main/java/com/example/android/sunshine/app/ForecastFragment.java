@@ -312,6 +312,7 @@ public class ForecastFragment extends Fragment {
                 for (String dayForecastStr : result) {
                     mForecastAdapter.add(dayForecastStr);
                 }
+                // New data is back from the server.  Hooray!
             }
         }
     }
